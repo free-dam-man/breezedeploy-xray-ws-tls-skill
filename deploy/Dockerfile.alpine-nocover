@@ -1,0 +1,8 @@
+# Fallback WITHOUT HTTP cover on /. Official xray image has NO shell —
+# do not use it as the final FROM with a shell entrypoint.
+# BreezeDeploy readiness defaults to / → prefer the cover image / public :staxa tag.
+FROM ghcr.io/xtls/xray-core:latest AS src
+FROM alpine:3.20
+COPY --from=src /usr/local/bin/xray /usr/local/bin/xray
+COPY --chmod=755 entrypoint-nocover.sh /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]

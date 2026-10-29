@@ -1,0 +1,17 @@
+*.env
+.env*
+breeze.env
+api.key
+sub-*.txt
+*_qr.png
+vless.url
+xray
+web-worker
+xray.zip
+geoip.dat
+geosite.dat
+xray-config.json
+*.tar
+.DS_Store
+secrets/
+node_modules/
